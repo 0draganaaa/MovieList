@@ -1,0 +1,32 @@
+.modal-dialog .header {
+    border-bottom: none;
+    word-wrap: break-word;
+}
+
+.modal-dialog .poster {
+    width: 80%;
+}
+
+.modal-dialog .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-dialog .info {
+    text-align: center;
+    width: 80%;
+    padding-top: 5%;
+}
+
+.modal-dialog .info h5 {
+    margin-bottom: 40px;
+    word-wrap: break-word;
+}
+
+.modal-dialog .button-container {
+    justify-content: flex-end;
+    display: flex;
+    margin-top: 20px;
+    margin-right: 20px;
+}

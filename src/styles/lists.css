@@ -1,0 +1,18 @@
+.list-container {
+  height: 100vh;
+}
+
+.category {
+  height: 130px !important;
+}
+
+.delete-list {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.category .card-body {
+  display: flex;
+  align-items: center;
+}
