@@ -1,16 +1,15 @@
 import { useContext } from "react"
 import { Container, Row, Col, Card, Button } from "react-bootstrap"
-import { useCol } from "react-bootstrap/esm/Col"
 import { ListContext } from "../context/ListProvider"
 import { IList } from "../types/lists"
 import { useNavigate } from "react-router"
 
 export const CategoryCards = () => {
 
-  const listsCntx = useContext(ListContext);
+  const listCntx = useContext(ListContext);
   const navigate = useNavigate();
 
-  const list: IList[] = listsCntx?.lists ?? [];
+  const list: IList[] = listCntx?.lists ?? [];
 
   return (
     <Container>
@@ -19,20 +18,18 @@ export const CategoryCards = () => {
           <Col key={item.id} md={4}>
             <Card
               className="mb-3 cursor-pointer category"
-              onClick={() => navigate(`/${item.id}`)}
             >
               <Card.Body>
                 <Row>
-                  <Col>
                   <Card.Title>{item.name}</Card.Title>
                   <Card.Text>{item.description}</Card.Text>
+                  <Col>
+                    <Button className="px-3" onClick={() => listCntx?.removeList(item.id)} variant="danger">Delete</Button>
                   </Col>
-                  <Col className="delete-list">
-                  <Button onClick={() => 0} variant="danger">Create a list</Button>
-                    
+                  <Col>
+                    <Button className="px-3" onClick={() => navigate(`/lists/${item.id}`)} variant="primary">View</Button>
                   </Col>
                 </Row>
-                
               </Card.Body>
             </Card>
           </Col>

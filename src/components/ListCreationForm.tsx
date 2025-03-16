@@ -1,4 +1,4 @@
-import { Button, Form } from "react-bootstrap"
+import { Button, Container, Form } from "react-bootstrap"
 import { ListContext } from "../context/ListProvider";
 import { FunctionComponent, useContext, useState } from "react";
 import { IListDetails } from "../types/lists";
@@ -30,7 +30,7 @@ export const ListCreationForm: FunctionComponent<{
 
   return (
     <Form className="list-form">
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+      <Form.Group className="mb-3">
         <Form.Label>List name</Form.Label>
         <Form.Control
           type="input"
@@ -40,7 +40,7 @@ export const ListCreationForm: FunctionComponent<{
           onChange={handleChange}
         />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+      <Form.Group className="mb-3">
         <Form.Label>List description</Form.Label>
         <Form.Control
           as="textarea"
@@ -50,7 +50,9 @@ export const ListCreationForm: FunctionComponent<{
           onChange={handleChange}
         />
       </Form.Group>
-      <Button onClick={() => createNewList()} variant="secondary">Create a list</Button>
+      <Container className="create-list-btn">
+        <Button onClick={() => createNewList()} variant="success">Create a list</Button>
+      </Container>
     </Form>
   )
 }

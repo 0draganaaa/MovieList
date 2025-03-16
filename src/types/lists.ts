@@ -1,4 +1,4 @@
-import { IMovie } from "./movies";
+import { IMovie, IMovieSnakeCase } from "./movies";
 
 export interface IList {
   description: string;
@@ -19,3 +19,18 @@ export interface IListsResponse {
     results: IList[]
   }
 }
+
+export interface IListsMoviesResponse {
+  description: string;
+  id: string;
+  name: string;
+  items: IMovieSnakeCase[];
+}
+
+export interface IListsMovies {
+  description: string;
+  id: string;
+  name: string;
+  items: IMovie[];
+}
+

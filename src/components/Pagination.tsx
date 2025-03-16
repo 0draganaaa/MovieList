@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { Container, Pagination } from "react-bootstrap";
+import { useContext, useEffect } from "react";
+import { Pagination } from "react-bootstrap";
 import { MovieContext } from "../context/MovieProvider";
 
 export const PaginationComponent = () => {
@@ -33,7 +33,7 @@ export const PaginationComponent = () => {
       <Pagination.Ellipsis />
 
       <Pagination.Last
-        onClick={() => setCurrentPage(1)}
+        onClick={() => setCurrentPage(totalPages)}
         disabled={currentPage === totalPages}
       >
         {totalPages}

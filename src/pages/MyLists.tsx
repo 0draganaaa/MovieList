@@ -8,7 +8,9 @@ export const MyLists = () => {
 
   return (
     <Container className="list-container">
-      <Button onClick={() => setModalOpened(true)} variant="secondary">Create a list</Button>
+      <Container className="create-new-list-container">
+        <Button onClick={() => setModalOpened(true)} variant="success">Create a new list</Button>
+      </Container>
       <CategoryCards />
       <ListCreationModal
         modalOpened={modalOpened}

@@ -1,7 +1,7 @@
-import { createContext, useState, useEffect, ReactNode } from "react";
+import { createContext, useState, ReactNode } from "react";
 import authService from "../services/authService";
 import { AuthContextType } from "./types";
-import { getToken, setToken } from "../utils/tokens";
+import { getToken } from "../utils/tokens";
 import { useNavigate } from "react-router";
 
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);

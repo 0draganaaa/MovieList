@@ -1,11 +1,15 @@
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap"
+import { Navbar, Container, Nav } from "react-bootstrap"
 
 export const Navigation = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="navigator">
       <Container>
-        <Nav.Link href="/"><Navbar.Brand>Movie Catalogue</Navbar.Brand></Nav.Link>
-        <Nav.Link href="/login">My lists</Nav.Link>
+        <Navbar.Brand href="/" className="navbar-brand">
+          Movie Catalogue
+        </Navbar.Brand>
+        <Nav>
+          <Nav.Link className="nav-links" href="/lists">My Movie Lists</Nav.Link>
+        </Nav>
       </Container>
     </Navbar>
   )

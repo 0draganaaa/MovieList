@@ -8,6 +8,7 @@ import { MyLists } from './pages/MyLists';
 import { ListProvider } from './context/ListProvider';
 import { AuthCallbackPage } from './pages/AuthCallbackPage';
 import { Login } from './pages/Login';
+import { List } from './pages/List';
 
 function App() {
 
@@ -16,11 +17,12 @@ function App() {
       <MovieProvider>
         <AuthProvider>
           <ListProvider>
-            <Navigation /> {/* Navbar should be inside Router */}
+            <Navigation />
             <Routes>
               <Route path="/" element={<MainPage />} />
               <Route path="/lists" element={<MyLists />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/lists/:id" element={<List />} />
               <Route path="/auth/callback" element={<AuthCallbackPage />} />
             </Routes>
           </ListProvider>

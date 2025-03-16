@@ -1,30 +1,40 @@
-import React, { Dispatch, FunctionComponent, SetStateAction } from "react";
+import { FunctionComponent, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Card } from "./Card";
 import { IMovie } from "../types/movies";
+import { MovieModal } from "./MovieModal";
 
 export const MovieList: FunctionComponent<{
 	movies: IMovie[];
-	setSelectedMovie: Dispatch<SetStateAction<IMovie | null>>;
-}> = ({ movies, setSelectedMovie }) => {
+	removeFromList?: (id: number) => void;
+}> = ({ movies, removeFromList }) => {
+  const [selectedMovie, setSelectedMovie] = useState<IMovie | null>(null);
+
 	return (
 		<Container>
 			<Row>
 				{movies.length ? (
 					movies.map((movie: IMovie) => (
-						<Col key={movie.id} xs={4} sm={6} lg={4}>
+						<Col key={movie.id} xs={12} sm={6} lg={4}>
 							<Card
 								movie={movie}
 								setSelectedMovie={setSelectedMovie}
+								removeFromList={removeFromList ? () => removeFromList(movie.id) : undefined}
 							/>
 						</Col>
 					))
 				) : (
 					<Col className="no-movies fs-5 text-center">
-						No movies with given title are available.
+						No movies are available.
 					</Col>
 				)}
 			</Row>
+			<MovieModal
+          movie={selectedMovie}
+          closeModal={() => {
+            setSelectedMovie(null);
+          }}
+        />
 		</Container>
 	);
 };

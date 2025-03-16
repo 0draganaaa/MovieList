@@ -1,9 +1,61 @@
 .list-container {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 50px;
+}
+
+.list-container .btn-success, .create-list-btn .btn-success {
+  background-color: #1f7a47;
+  border-color: #1c6b3e;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.list-container .btn-success:hover, .create-list-btn .btn-success:hover {
+  background-color: #195f36;
+  border-color: #144d2c;
 }
 
 .category {
-  height: 130px !important;
+  height: 260px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #222;
+  color: white;
+  border-radius: 12px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease-in-out;
+}
+
+.category:hover {
+  transform: scale(1.02);
+}
+
+.category .btn {
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.category .btn-danger {
+  background-color: #ff4d4d;
+  border-color: #ff4d4d;
+}
+
+.category .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.category .card-body {
+  padding-top: 10%;
+  display: flex;
 }
 
 .delete-list {
@@ -12,7 +64,15 @@
   justify-content: end;
 }
 
-.category .card-body {
-  display: flex;
-  align-items: center;
+.create-new-list-container {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.create-list-btn {
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
 }

@@ -1,7 +1,10 @@
 export interface IMovie {
     adult: boolean;
     backdropPath: string;
-    genres: string[];
+    budget: number;
+    runtime: number;
+    revenue: number;
+    genres: IGenre[];
     id: number;
     originalLanguage: string;
     originalTitle: string;
@@ -19,7 +22,10 @@ export interface IMovie {
 export interface IMovieSnakeCase {
     adult: boolean;
     backdrop_path: string;
-    genres: string[];
+    budget: number;
+    runtime: number;
+    revenue: number;
+    genres: IGenre[];
     id: number;
     original_language: string;
     original_title: string;
@@ -34,6 +40,16 @@ export interface IMovieSnakeCase {
     vote_count: number;
 }
 
-export interface IMovieResponse {
+export interface IGenre {
+    id: number;
+    name: string;
+}
+
+export interface IMoviesResponse {
     data: any;
+}
+
+
+export interface IMovieResponse {
+    data: IMovieSnakeCase;
 }
